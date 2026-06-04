@@ -3,7 +3,7 @@ import { defineConfig } from '@prisma/config';
 
 export default defineConfig({
   migrations: {
-    // This tells Prisma to execute your seed file using ts-node
-    seed: 'npx ts-node prisma/seed.ts',
+    // This uses Next.js configuration directly instead of ts-node
+    seed: 'npx next env npx tsx prisma/seed.ts',
   },
 });
