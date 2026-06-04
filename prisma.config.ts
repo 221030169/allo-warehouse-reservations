@@ -3,7 +3,10 @@ import { defineConfig } from '@prisma/config';
 
 export default defineConfig({
   migrations: {
-    // This uses Next.js configuration directly instead of ts-node
-    seed: 'npx next env npx tsx prisma/seed.ts',
+    seed: 'npx tsx prisma/seed.ts',
+  },
+  datasource: {
+    // This forces Prisma to read your Neon URL directly from your environment variables
+    url: process.env.DATABASE_URL,
   },
 });
